@@ -9,17 +9,23 @@
 body{
 margin:0;
 font-family:Segoe UI;
-background:linear-gradient(135deg,#0a2a1f,#1a4a35,#2a6b4a);
+background: 
+    radial-gradient(circle at 25% 30%, rgba(0,0,0,0.4) 1px, transparent 2px),
+    radial-gradient(circle at 75% 60%, rgba(0,0,0,0.35) 1.5px, transparent 3px),
+    radial-gradient(circle at 40% 80%, rgba(0,0,0,0.45) 1px, transparent 2px),
+    linear-gradient(135deg, #0a2a1f, #1a4a35, #2a6b4a);
+background-size: 80px 80px, 120px 120px, 90px 90px, cover;
 color:white;
 }
 
 header{
 text-align:center;
 padding:25px;
+background:rgba(0,0,0,0.3);
 }
 
 h1{
-text-shadow:0 0 15px lime;
+text-shadow:0 0 20px lime, 0 0 30px darkgreen;
 }
 
 .container{
@@ -30,17 +36,36 @@ padding:20px;
 }
 
 .card{
-background:rgba(255,255,255,0.08);
+background:rgba(20, 50, 35, 0.85);
 padding:15px;
-border-radius:15px;
+border-radius:18px;
 cursor:pointer;
-border:1px solid rgba(255,255,255,0.2);
-transition:0.3s;
+border:2px solid rgba(100, 180, 120, 0.3);
+box-shadow: 0 8px 20px rgba(0,0,0,0.6),
+            inset 0 0 25px rgba(0,0,0,0.4);
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:'';
+position:absolute;
+top:0; left:0; right:0; bottom:0;
+background: 
+    radial-gradient(circle, rgba(0,0,0,0.3) 1px, transparent 2px),
+    radial-gradient(circle, rgba(0,0,0,0.25) 1px, transparent 3px);
+background-size: 18px 18px;
+opacity:0.6;
+pointer-events:none;
+border-radius:18px;
 }
 
 .card:hover{
-transform:scale(1.05);
-background:rgba(255,255,255,0.15);
+transform:scale(1.06);
+background:rgba(30, 70, 50, 0.95);
+box-shadow: 0 12px 30px rgba(0,0,0,0.7),
+            inset 0 0 30px rgba(0,0,0,0.5);
 }
 
 .group{
@@ -51,29 +76,44 @@ padding:20px;
 .back{
 background:lime;
 border:none;
-padding:10px;
-border-radius:10px;
+padding:12px 20px;
+border-radius:12px;
 cursor:pointer;
 margin-bottom:15px;
-color: black;
+color: #0a2a1f;
 font-weight: bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.4);
 }
 
 .animal{
-background:rgba(0,0,0,0.35);
-padding:15px;
-border-radius:15px;
-margin-bottom:15px;
-border-left: 5px solid lime;
+background:rgba(15, 35, 25, 0.9);
+padding:18px;
+border-radius:16px;
+margin-bottom:18px;
+border-left: 6px solid #4ade80;
+box-shadow: 0 6px 15px rgba(0,0,0,0.5),
+            inset 0 2px 8px rgba(255,255,255,0.08);
+position:relative;
+}
+
+.animal::before{
+content:'';
+position:absolute;
+top:10px; right:15px;
+width:35px; height:35px;
+background:radial-gradient(circle, rgba(0,0,0,0.4) 30%, transparent 70%);
+border-radius:50%;
+opacity:0.3;
 }
 
 .tag{
 display:inline-block;
-background:rgba(0,255,100,0.2);
-padding:3px 8px;
-border-radius:8px;
-margin:3px;
-font-size:0.75rem;
+background:rgba(74, 222, 128, 0.25);
+padding:4px 10px;
+border-radius:20px;
+margin:4px 3px;
+font-size:0.78rem;
+border:1px solid rgba(74, 222, 128, 0.4);
 }
 </style>
 </head>
@@ -116,7 +156,6 @@ font-size:0.75rem;
 <h2>🐋 FAMÍLIAS DA ORDEM CETACEA</h2>
 <p>Grupos que reúnem todos os mamíferos 100% adaptados à vida marinha permanente.</p>
 
-<!-- 1 -->
 <div class="animal">
 <h3>Balaenopteridae (Rorquais)</h3>
 <span class="tag">Mysticeti</span><span class="tag">Atuais</span>
@@ -127,7 +166,6 @@ font-size:0.75rem;
 <p><b>Espécies Famosas:</b> Baleia-Azul (<i>Balaenoptera musculus</i>), Baleia-Jubarte, Baleia-Fin.</p>
 </div>
 
-<!-- 2 -->
 <div class="animal">
 <h3>Delphinidae (Golfinhos Oceânicos)</h3>
 <span class="tag">Odontoceti</span><span class="tag">Atuais</span>
@@ -138,7 +176,6 @@ font-size:0.75rem;
 <p><b>Espécies Famosas:</b> Golfinho-Nariz-de-Garrafa, Orca (sim, a orca pertence à família dos golfinhos!), Golfinho-Rotador.</p>
 </div>
 
-<!-- 3 -->
 <div class="animal">
 <h3>Physeteridae (Cachalotes)</h3>
 <span class="tag">Odontoceti</span><span class="tag">Atuais</span>
@@ -149,7 +186,6 @@ font-size:0.75rem;
 <p><b>Espécies Famosas:</b> Cachalote (<i>Physeter macrocephalus</i>).</p>
 </div>
 
-<!-- 4 -->
 <div class="animal">
 <h3>Monodontidae (Cetáceos do Ártico)</h3>
 <span class="tag">Odontoceti</span><span class="tag">Atuais</span>
@@ -160,7 +196,6 @@ font-size:0.75rem;
 <p><b>Espécies Famosas:</b> Beluga (<i>Delphinapterus leucas</i>) e Narval (<i>Monodon monoceros</i>).</p>
 </div>
 
-<!-- 5 -->
 <div class="animal">
 <h3>Phocoenidae (Toninhas e Marsopas)</h3>
 <span class="tag">Odontoceti</span><span class="tag">Atuais</span>
@@ -171,7 +206,6 @@ font-size:0.75rem;
 <p><b>Espécies Famosas:</b> Vaquita (<i>Phocoena sinus</i>), Marsopa-comum.</p>
 </div>
 
-<!-- 6 -->
 <div class="animal">
 <h3>Iniidae (Golfinhos de Rio)</h3>
 <span class="tag">Odontoceti</span><span class="tag">Atuais</span>
@@ -182,7 +216,6 @@ font-size:0.75rem;
 <p><b>Espécies Famosas:</b> Boto-Cor-de-Rosa (<i>Inia geoffrensis</i>).</p>
 </div>
 
-<!-- 7 -->
 <div class="animal">
 <h3>Basilosauridae (Cetáceos Primitivos)</h3>
 <span class="tag">Archaeoceti</span><span class="tag">Extintos</span>
@@ -200,7 +233,6 @@ font-size:0.75rem;
 <h2>🦭 FAMÍLIAS DA SUBORDEM PINIPEDIA</h2>
 <p>Agrupamento dos carnívoros semi-aquáticos, divididos estritamente em três famílias vivas.</p>
 
-<!-- 1 -->
 <div class="animal">
 <h3>Phocidae (Focas Verdadeiras e Elefantes-Marinhos)</h3>
 <span class="tag">Phocidae</span><span class="tag">Atuais</span>
@@ -211,7 +243,6 @@ font-size:0.75rem;
 <p><b>Espécies Famosas:</b> Foca-Leopardo, Elefante-Marinho-do-Sul (<i>Mirounga leonina</i>), Foca-Harpa.</p>
 </div>
 
-<!-- 2 -->
 <div class="animal">
 <h3>Otariidae (Leões-Marinhos e Lobos-Marinhos)</h3>
 <span class="tag">Otariidae</span><span class="tag">Atuais</span>
@@ -222,7 +253,6 @@ font-size:0.75rem;
 <p><b>Espécies Famosas:</b> Leão-Marinho-da-Califórnia (<i>Zalophus californianus</i>), Lobo-Marinho-Sul-Americano.</p>
 </div>
 
-<!-- 3 -->
 <div class="animal">
 <h3>Odobenidae (Morsas)</h3>
 <span class="tag">Odobenidae</span><span class="tag">Atuais</span>
@@ -240,7 +270,6 @@ font-size:0.75rem;
 <h2>🦖 GRANDES FAMÍLIAS E CLADOS DE DINOSAURIA</h2>
 <p>Divisão científica baseada na morfologia esquelética e linhagens evolutivas dos dinossauros.</p>
 
-<!-- 1 -->
 <div class="animal" style="border-left: 5px solid red;">
 <h3>Tyrannosauridae (Tiranossaurídeos)</h3>
 <span class="tag">Saurischia</span><span class="tag">Theropoda</span><span class="tag">Extintos</span>
@@ -250,7 +279,6 @@ font-size:0.75rem;
 <p><b>Espécies Famosas:</b> <i>Tyrannosaurus rex</i>, <i>Albertosaurus</i>, <i>Tarbosaurus</i>.</p>
 </div>
 
-<!-- 2 -->
 <div class="animal" style="border-left: 5px solid red;">
 <h3>Diplodocidae (Diplodocídeos)</h3>
 <span class="tag">Saurischia</span><span class="tag">Sauropodomorpha</span><span class="tag">Extintos</span>
@@ -260,7 +288,6 @@ font-size:0.75rem;
 <p><b>Espécies Famosas:</b> <i>Diplodocus</i>, <i>Apatosaurus</i>, <i>Barosaurus</i>.</p>
 </div>
 
-<!-- 3 -->
 <div class="animal" style="border-left: 5px solid green;">
 <h3>Ceratopsidae (Ceratopsídeos)</h3>
 <span class="tag">Ornithischia</span><span class="tag">Marginocephalia</span><span class="tag">Extintos</span>
@@ -270,7 +297,6 @@ font-size:0.75rem;
 <p><b>Espécies Famosas:</b> <i>Triceratops</i>, <i>Styracosaurus</i>, <i>Centrosaurus</i>.</p>
 </div>
 
-<!-- 4 -->
 <div class="animal" style="border-left: 5px solid green;">
 <h3>Stegosauridae (Estegossaurídeos)</h3>
 <span class="tag">Ornithischia</span><span class="tag">Thyreophora</span><span class="tag">Extintos</span>
@@ -280,7 +306,6 @@ font-size:0.75rem;
 <p><b>Espécies Famosas:</b> <i>Stegosaurus</i>, <i>Kentrosaurus</i>.</p>
 </div>
 
-<!-- 5 -->
 <div class="animal" style="border-left: 5px solid green;">
 <h3>Hadrosauridae (Hadrossaurídeos / Bico-de-Pato)</h3>
 <span class="tag">Ornithischia</span><span class="tag">Ornithopoda</span><span class="tag">Extintos</span>
@@ -289,7 +314,6 @@ font-size:0.75rem;
 <p><b>O que comem:</b> Herbívoros eficientes com baterias de centenas de dentes trituradores para moer plantas duras.</p>
 <p><b>Espécies Famosas:</b> <i>Parasaurolophus</i>, <i>Edmontosaurus</i>, <i>Maiasaura</i>.</p>
 </div>
-
 </div>
 
 <!-- ANFÍBIOS -->
@@ -298,7 +322,6 @@ font-size:0.75rem;
 <h2>🐸 FAMÍLIAS DE ANFÍBIOS (SAPOS E RÃS)</h2>
 <p>Principais famílias de anuros (sapos, rãs e pererecas) da ordem Anura.</p>
 
-<!-- 1 -->
 <div class="animal">
 <h3>Bufonidae (Sapos Verdadeiros)</h3>
 <span class="tag">Anura</span><span class="tag">Atuais</span>
@@ -309,7 +332,6 @@ font-size:0.75rem;
 <p><b>Espécies Famosas:</b> Sapo-Comum (<i>Bufo bufo</i>), Sapo-Cururu (<i>Rhinella marina</i>).</p>
 </div>
 
-<!-- 2 -->
 <div class="animal">
 <h3>Ranidae (Rãs Verdadeiras)</h3>
 <span class="tag">Anura</span><span class="tag">Atuais</span>
@@ -320,7 +342,6 @@ font-size:0.75rem;
 <p><b>Espécies Famosas:</b> Rã-Touro (<i>Lithobates catesbeianus</i>), Rã-Comum-Europeia (<i>Rana temporaria</i>).</p>
 </div>
 
-<!-- 3 -->
 <div class="animal">
 <h3>Hylidae (Pererecas / Sapos Arborícolas)</h3>
 <span class="tag">Anura</span><span class="tag">Atuais</span>
@@ -330,7 +351,6 @@ font-size:0.75rem;
 <p><b>Estilo de Vida:</b> Arborícolas, com grande capacidade de adesão. Muitas espécies são extremamente coloridas e vocalizam alto durante a noite.</p>
 <p><b>Espécies Famosas:</b> Perereca-Verde (<i>Boana faber</i> / <i>Hyla</i> spp.), Perereca-de-Unha.</p>
 </div>
-
 </div>
 
 <script>
