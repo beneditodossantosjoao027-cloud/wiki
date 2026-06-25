@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -9,7 +9,7 @@
 body{
 margin:0;
 font-family:Segoe UI;
-background:linear-gradient(135deg,#061826,#0d2f45,#1d4968);
+background:linear-gradient(135deg,#0a2a1f,#1a4a35,#2a6b4a);
 color:white;
 }
 
@@ -19,7 +19,7 @@ padding:25px;
 }
 
 h1{
-text-shadow:0 0 15px cyan;
+text-shadow:0 0 15px lime;
 }
 
 .container{
@@ -49,7 +49,7 @@ padding:20px;
 }
 
 .back{
-background:cyan;
+background:lime;
 border:none;
 padding:10px;
 border-radius:10px;
@@ -64,12 +64,12 @@ background:rgba(0,0,0,0.35);
 padding:15px;
 border-radius:15px;
 margin-bottom:15px;
-border-left: 5px solid cyan;
+border-left: 5px solid lime;
 }
 
 .tag{
 display:inline-block;
-background:rgba(0,255,255,0.2);
+background:rgba(0,255,100,0.2);
 padding:3px 8px;
 border-radius:8px;
 margin:3px;
@@ -82,7 +82,7 @@ font-size:0.75rem;
 
 <header>
 <h1>🌎 Enciclopédia Zoológica</h1>
-<p>Cetáceos • Pinípedes • Dinossauros</p>
+<p>Cetáceos • Pinípedes • Dinossauros • Anfíbios</p>
 </header>
 
 <!-- MENU -->
@@ -101,6 +101,11 @@ font-size:0.75rem;
 <div class="card" onclick="openGroup('dinos')">
 <h2>🦖 Dinossauros</h2>
 <p>Famílias e Clados de Saurísquios e Ornitisquios</p>
+</div>
+
+<div class="card" onclick="openGroup('anfibios')">
+<h2>🐸 Anfíbios (Sapos)</h2>
+<p>Famílias Bufonidae, Ranidae e Hylidae</p>
 </div>
 
 </div>
@@ -283,6 +288,47 @@ font-size:0.75rem;
 <p><b>Onde viviam:</b> Extremamente abundantes no Cretáceo Superior da Ásia, Europa e América do Norte.</p>
 <p><b>O que comem:</b> Herbívoros eficientes com baterias de centenas de dentes trituradores para moer plantas duras.</p>
 <p><b>Espécies Famosas:</b> <i>Parasaurolophus</i>, <i>Edmontosaurus</i>, <i>Maiasaura</i>.</p>
+</div>
+
+</div>
+
+<!-- ANFÍBIOS -->
+<div id="anfibios" class="group">
+<button class="back" onclick="back()">⬅ Voltar</button>
+<h2>🐸 FAMÍLIAS DE ANFÍBIOS (SAPOS E RÃS)</h2>
+<p>Principais famílias de anuros (sapos, rãs e pererecas) da ordem Anura.</p>
+
+<!-- 1 -->
+<div class="animal">
+<h3>Bufonidae (Sapos Verdadeiros)</h3>
+<span class="tag">Anura</span><span class="tag">Atuais</span>
+<p><b>Como identificar a Família:</b> Corpo robusto e atarracado, pele geralmente seca e verrugosa com glândulas parotoides que produzem toxinas. Muitos possuem coloração críptica marrom ou cinza.</p>
+<p><b>Onde vivem:</b> Praticamente todos os continentes (exceto Antártida e algumas ilhas oceânicas), em habitats variados desde florestas até áreas urbanas.</p>
+<p><b>O que comem:</b> Insetos, aranhas, minhocas e pequenos invertebrados (capturados com a língua projétil).</p>
+<p><b>Estilo de Vida:</b> Principalmente terrestres e noturnos. Muitos são conhecidos por seu "canto" rouco durante a reprodução em águas temporárias.</p>
+<p><b>Espécies Famosas:</b> Sapo-Comum (<i>Bufo bufo</i>), Sapo-Cururu (<i>Rhinella marina</i>).</p>
+</div>
+
+<!-- 2 -->
+<div class="animal">
+<h3>Ranidae (Rãs Verdadeiras)</h3>
+<span class="tag">Anura</span><span class="tag">Atuais</span>
+<p><b>Como identificar a Família:</b> Corpo mais esguio que os sapos, patas traseiras longas e poderosas adaptadas para saltos longos, pele lisa e úmida. Geralmente associadas a ambientes aquáticos.</p>
+<p><b>Onde vivem:</b> Distribuição cosmopolita, especialmente em regiões temperadas e tropicais próximas a corpos d'água.</p>
+<p><b>O que comem:</b> Insetos, pequenos vertebrados e crustáceos aquáticos.</p>
+<p><b>Estilo de Vida:</b> Excelentes saltadoras e nadadoras. Muitas espécies têm canto melodioso e são ativas tanto diurna quanto noturna.</p>
+<p><b>Espécies Famosas:</b> Rã-Touro (<i>Lithobates catesbeianus</i>), Rã-Comum-Europeia (<i>Rana temporaria</i>).</p>
+</div>
+
+<!-- 3 -->
+<div class="animal">
+<h3>Hylidae (Pererecas / Sapos Arborícolas)</h3>
+<span class="tag">Anura</span><span class="tag">Atuais</span>
+<p><b>Como identificar a Família:</b> Dedos com discos adesivos (almofadas) que permitem escalar superfícies verticais. Corpo geralmente esguio e coloração verde brilhante para camuflagem em folhagens.</p>
+<p><b>Onde vivem:</b> Principalmente Américas (do Canadá ao sul da Argentina) e algumas regiões da Europa, Ásia e Austrália, em árvores e vegetação.</p>
+<p><b>O que comem:</b> Insetos voadores e pequenos artrópodes.</p>
+<p><b>Estilo de Vida:</b> Arborícolas, com grande capacidade de adesão. Muitas espécies são extremamente coloridas e vocalizam alto durante a noite.</p>
+<p><b>Espécies Famosas:</b> Perereca-Verde (<i>Boana faber</i> / <i>Hyla</i> spp.), Perereca-de-Unha.</p>
 </div>
 
 </div>
