@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enciclopédia Zoológica v3</title>
+
+<style>
+body{
+margin:0;
+font-family:Segoe UI;
+background: 
+    radial-gradient(circle at 25% 30%, rgba(0,0,0,0.4) 1px, transparent 2px),
+    radial-gradient(circle at 75% 60%, rgba(0,0,0,0.35) 1.5px, transparent 3px),
+    radial-gradient(circle at 40% 80%, rgba(0,0,0,0.45) 1px, transparent 2px),
+    linear-gradient(135deg, #0a2a1f, #1a4a35, #2a6b4a);
+background-size: 80px 80px, 120px 120px, 90px 90px, cover;
+color:white;
+}
+
+header{
+text-align:center;
+padding:25px;
+background:rgba(0,0,0,0.3);
+}
+
+h1{
+text-shadow:0 0 20px lime, 0 0 30px darkgreen;
+}
+
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:15px;
+padding:20px;
+}
+
+.card{
+background:rgba(20, 50, 35, 0.85);
+padding:15px;
+border-radius:18px;
+cursor:pointer;
+border:2px solid rgba(100, 180, 120, 0.3);
+box-shadow: 0 8px 20px rgba(0,0,0,0.6),
+            inset 0 0 25px rgba(0,0,0,0.4);
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:'';
+position:absolute;
+top:0; left:0; right:0; bottom:0;
+background: 
+    radial-gradient(circle, rgba(0,0,0,0.3) 1px, transparent 2px),
+    radial-gradient(circle, rgba(0,0,0,0.25) 1px, transparent 3px);
+background-size: 18px 18px;
+opacity:0.6;
+pointer-events:none;
+border-radius:18px;
+}
+
+.card:hover{
+transform:scale(1.06);
+background:rgba(30, 70, 50, 0.95);
+box-shadow: 0 12px 30px rgba(0,0,0,0.7),
+            inset 0 0 30px rgba(0,0,0,0.5);
+}
+
+.group{
+display:none;
+padding:20px;
+}
+
+.back{
+background:lime;
+border:none;
+padding:12px 20px;
+border-radius:12px;
+cursor:pointer;
+margin-bottom:15px;
+color: #0a2a1f;
+font-weight: bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.4);
+}
+
+.animal{
+background:rgba(15, 35, 25, 0.9);
+padding:18px;
+border-radius:16px;
+margin-bottom:18px;
+border-left: 6px solid #4ade80;
+box-shadow: 0 6px 15px rgba(0,0,0,0.5),
+            inset 0 2px 8px rgba(255,255,255,0.08);
+position:relative;
+display: flex;
+flex-direction: column;
+}
+
+.animal-image{
+text-align:center;
+margin:15px 0;
+}
+
+.animal-image img{
+max-width:100%;
+height:auto;
+border-radius:12px;
+border:3px solid rgba(74, 222, 128, 0.5);
+box-shadow:0 8px 20px rgba(0,0,0,0.6);
+}
+
+.tag{
+display:inline-block;
+background:rgba(74, 222, 128, 0.25);
+padding:4px 10px;
+border-radius:20px;
+margin:4px 3px;
+font-size:0.78rem;
+border:1px solid rgba(74, 222, 128, 0.4);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🌎 Enciclopédia Zoológica</h1>
+<p>Cetáceos • Pinípedes • Dinossauros • Anfíbios</p>
+</header>
+
+<!-- MENU -->
+<div id="menu" class="container">
+
+<div class="card" onclick="openGroup('cetaceos')">
+<h2>🐋 Cetáceos</h2>
+<p>Famílias de Mysticeti e Odontoceti</p>
+</div>
+
+<div class="card" onclick="openGroup('pinipedes')">
+<h2>🦭 Pinípedes</h2>
+<p>As Famílias de Mamíferos Semi-Aquáticos</p>
+</div>
+
+<div class="card" onclick="openGroup('dinos')">
+<h2>🦖 Dinossauros</h2>
+<p>Famílias e Clados de Saurísquios e Ornitisquios</p>
+</div>
+
+<div class="card" onclick="openGroup('anfibios')">
+<h2>🐸 Anfíbios (Sapos)</h2>
+<p>Famílias Bufonidae, Ranidae e Hylidae</p>
+</div>
+
+</div>
+
+<!-- CETÁCEOS -->
+<div id="cetaceos" class="group">
+<button class="back" onclick="back()">⬅ Voltar</button>
+<h2>🐋 FAMÍLIAS DA ORDEM CETACEA</h2>
+<p>Grupos que reúnem todos os mamíferos 100% adaptados à vida marinha permanente.</p>
+
+<div class="animal">
+<h3>Balaenopteridae (Rorquais)</h3>
+<span class="tag">Mysticeti</span><span class="tag">Atuais</span>
+<p><b>Como identificar a Família:</b> Possuem pregas gulares (sulcos na garganta) que se expandem como uma sanfona para engolir toneladas de água de uma vez, filtrando o alimento com suas barbatanas de queratina.</p>
+<p><b>Onde vivem:</b> Cosmopolitas (todos os oceanos do globo), realizando grandes migrações sazonais.</p>
+<p><b>O que comem:</b> Krill, pequenos crustáceos e cardumes de peixes minúsculos.</p>
+<p><b>Estilo de Vida:</b> Geralmente solitários ou em pequenos grupos. São nadadores rápidos graças ao corpo hidrodinâmico.</p>
+<p><b>Espécies Famosas:</b> Baleia-Azul (<i>Balaenoptera musculus</i>), Baleia-Jubarte, Baleia-Fin.</p>
+<div class="animal-image">
+<img src="Balaenopteridae (Rorquais).PNG" alt="Balaenopteridae">
+</div>
+</div>
+
+<div class="animal">
+<h3>Delphinidae (Golfinhos Oceânicos)</h3>
+<span class="tag">Odontoceti</span><span class="tag">Atuais</span>
+<p><b>Como identificar a Família:</b> Cetáceos com dentes homodontes (iguais), a maioria com focinho alongado em forma de bico ("belo") e um órgão de gordura na testa (melão) usado para ecolocalização.</p>
+<p><b>Onde vivem:</b> Mares abertos, zonas costeiras e estuários do mundo todo.</p>
+<p><b>O que comem:</b> Peixes, lulas e, no caso dos membros maiores, outros mamíferos marinhos.</p>
+<p><b>Estilo de Vida:</b> Extremamente sociais, vivem em complexas sociedades (pods), usam comunicação vocal rica e demonstram altíssima inteligência.</p>
+<p><b>Espécies Famosas:</b> Golfinho-Nariz-de-Garrafa, Orca (sim, a orca pertence à família dos golfinhos!), Golfinho-Rotador.</p>
+<div class="animal-image">
+<img src="Delphinidae (Golfinhos Oceânicos).PNG" alt="Delphinidae">
+</div>
+</div>
+
+<div class="animal">
+<h3>Physeteridae (Cachalotes)</h3>
+<span class="tag">Odontoceti</span><span class="tag">Atuais</span>
+<p><b>Como identificar a Família:</b> Cabeça gigantesca e quadrada que abriga o órgão de espermacete. Mandíbula inferior estreita armada com dentes cônicos robustos.</p>
+<p><b>Onde vivem:</b> Águas oceânicas muito profundas, preferindo fossas marinhas.</p>
+<p><b>O que comem:</b> Lulas gigantes e colossais da zona abissal.</p>
+<p><b>Estilo de Vida:</b> Campeões de mergulho profundo. Vivem em grupos de fêmeas e jovens, enquanto os machos maduros são mais solitários.</p>
+<p><b>Espécies Famosas:</b> Cachalote (<i>Physeter macrocephalus</i>).</p>
+<div class="animal-image">
+<img src="Physeteridae (Cachalotes).PNG" alt="Physeteridae">
+</div>
+</div>
+
+<div class="animal">
+<h3>Monodontidae (Cetáceos do Ártico)</h3>
+<span class="tag">Odontoceti</span><span class="tag">Atuais</span>
+<p><b>Como identificar a Família:</b> Não possuem barbatana dorsal verdadeira (adaptação para não colidir com o gelo) e têm cabeças arredondadas com pescoços estranhamente flexíveis para cetáceos.</p>
+<p><b>Onde vivem:</b> Exclusivamente nas águas geladas do Oceano Ártico e mares circundantes.</p>
+<p><b>O que comem:</b> Peixes árticos, lulas e camarões de águas frias.</p>
+<p><b>Estilo de Vida:</b> Altamente vocais, vivem em grupos adaptados a navegar por canais abertos em meio às calotas polares.</p>
+<p><b>Espécies Famosas:</b> Beluga (<i>Delphinapterus leucas</i>) e Narval (<i>Monodon monoceros</i>).</p>
+<div class="animal-image">
+<img src="Monodontidae (Cetáceos do Ártico).PNG" alt="Monodontidae">
+</div>
+</div>
+
+<div class="animal">
+<h3>Phocoenidae (Toninhas e Marsopas)</h3>
+<span class="tag">Odontoceti</span><span class="tag">Atuais</span>
+<p><b>Como identificar a Família:</b> Diferentes dos golfinhos, têm focinhos curtos e rombudos (sem bico comprido) e dentes achatados em formato de espátula.</p>
+<p><b>Onde vivem:</b> Águas costeiras e estuários do Hemisfério Norte e América do Sul.</p>
+<p><b>O que comem:</b> Pequenos peixes e cefalópodes demersais.</p>
+<p><b>Estilo de Vida:</b> Animais pequenos, tímidos e discretos, que raramente saltam fora da água.</p>
+<p><b>Espécies Famosas:</b> Vaquita (<i>Phocoena sinus</i>), Marsopa-comum.</p>
+</div>
+
+<div class="animal">
+<h3>Iniidae (Golfinhos de Rio)</h3>
+<span class="tag">Odontoceti</span><span class="tag">Atuais</span>
+<p><b>Como identificar a Família:</b> Focinhos extremamente longos e finos, olhos muito reduzidos (visão limitada) e nadadeiras peitorais grandes para manobra entre árvores submersas.</p>
+<p><b>Onde vivem:</b> Sistemas de rios de água doce da América do Sul.</p>
+<p><b>O que comem:</b> Grande variedade de peixes de rio e até caranguejos.</p>
+<p><b>Estilo de Vida:</b> Solitários ou em pequenos laços maternos. Adaptados à flutuação de nível das florestas inundadas.</p>
+<p><b>Espécies Famosas:</b> Boto-Cor-de-Rosa (<i>Inia geoffrensis</i>).</p>
+<div class="animal-image">
+<img src="Iniidae (Golfinhos de Rio).PNG" alt="Iniidae">
+</div>
+</div>
+
+<div class="animal">
+<h3>Basilosauridae (Cetáceos Primitivos)</h3>
+<span class="tag">Archaeoceti</span><span class="tag">Extintos</span>
+<p><b>Como identificar a Família:</b> Corpo extremamente alongado, quase serpentiforme. Mantinham dentes heterodontes diferenciados (como mamíferos terrestres) e pequenas patas traseiras vestigiais.</p>
+<p><b>Onde viviam:</b> Mares tropicais do período Eoceno.</p>
+<p><b>O que comiam:</b> Peixes grandes, tubarões e outros mamíferos marinhos menores.</p>
+<p><b>Estilo de Vida:</b> Predadores de topo pelágicos que marcaram a transição definitiva dos cetáceos para a vida exclusivamente marinha.</p>
+<p><b>Espécies Famosas:</b> Basilosaurus (<i>Basilosaurus cetoides</i>).</p>
+</div>
+</div>
+
+<!-- PINÍPEDES -->
+<div id="pinipedes" class="group">
+<button class="back" onclick="back()">⬅ Voltar</button>
+<h2>🦭 FAMÍLIAS DA SUBORDEM PINIPEDIA</h2>
+<p>Agrupamento dos carnívoros semi-aquáticos, divididos estritamente em três famílias vivas.</p>
+
+<div class="animal">
+<h3>Phocidae (Focas Verdadeiras e Elefantes-Marinhos)</h3>
+<span class="tag">Phocidae</span><span class="tag">Atuais</span>
+<p><b>Como identificar a Família:</b> Não possuem orelhas externas (apenas um orifício auditivo). Suas nadadeiras traseiras são direcionadas permanentemente para trás, o que as impede de caminhar em terra — em solo firme, elas se movem rastejando ou "galopando" com a barriga.</p>
+<p><b>Onde vivem:</b> Predominantemente em mares polares e temperados de ambos os hemisférios.</p>
+<p><b>O que comem:</b> Peixes, lulas, crustáceos e, no caso de alguns predadores do grupo, pinguins e outras focas.</p>
+<p><b>Estilo de Vida:</b> Altamente hidrodinâmicas, excelentes mergulhadoras de profundidade. Passam a maior parte do tempo no mar de forma solitária, indo para terra apenas para reprodução e troca de pelagem.</p>
+<p><b>Espécies Famosas:</b> Foca-Leopardo, Elefante-Marinho-do-Sul (<i>Mirounga leonina</i>), Foca-Harpa.</p>
+<div class="animal-image">
+<img src="Phocidae (Focas Verdadeiras e Elefantes-Marinhos).PNG" alt="Phocidae">
+</div>
+</div>
+
+<div class="animal">
+<h3>Otariidae (Leões-Marinhos e Lobos-Marinhos)</h3>
+<span class="tag">Otariidae</span><span class="tag">Atuais</span>
+<p><b>Como identificar a Família:</b> Possuem pequenas orelhas cartilaginosas externas visíveis. Conseguem rotacionar suas nadadeiras traseiras para a frente por baixo do corpo, o que permite que eles fiquem "em pé" e caminhem ou corram com facilidade em terra firme.</p>
+<p><b>Onde vivem:</b> Zonas costeiras de ilhas e continentes nos oceanos Pacífico, Atlântico Sul e Índico.</p>
+<p><b>O que comem:</b> Cardumes de peixes (sardinhas, salmões), lulas e krill.</p>
+<p><b>Estilo de Vida:</b> Muito sociais e barulhentos. Formam colônias massivas nas praias rochosas durante a época de acasalamento, controladas por machos territoriais dominantes.</p>
+<p><b>Espécies Famosas:</b> Leão-Marinho-da-Califórnia (<i>Zalophus californianus</i>), Lobo-Marinho-Sul-Americano.</p>
+<div class="animal-image">
+<img src="Otariidae (Leões-Marinhos e Lobos-Marinhos).PNG" alt="Otariidae">
+</div>
+</div>
+
+<div class="animal">
+<h3>Odobenidae (Morsas)</h3>
+<span class="tag">Odobenidae</span><span class="tag">Atuais</span>
+<p><b>Como identificar a Família:</b> Não possuem orelhas externas, mas partilham com os otariídeos a capacidade de rotacionar as patas traseiras para andar em terra. Caracterizam-se pelas imensas presas de marfim superiores e focinho cheio de bigodes sensoriais espessos.</p>
+<p><b>Onde vivem:</b> Regiões circumpolares do Oceano Ártico.</p>
+<p><b>O que comem:</b> Invertebrados bentônicos do leito marinho, especialmente mariscos e amêijoas.</p>
+<p><b>Estilo de Vida:</b> Gregários, descansam juntos aos milhares em blocos de gelo flutuantes. Usam suas presas para defesa, exibições de dominância e para se puxarem para fora da água congelada.</p>
+<p><b>Espécies Famosas:</b> Morsa (<i>Odobenus rosmarus</i>).</p>
+<div class="animal-image">
+<img src="Odobenidae (Morsas).PNG" alt="Odobenidae">
+</div>
+</div>
+</div>
+
+<!-- DINOSSAUROS -->
+<div id="dinos" class="group">
+<button class="back" onclick="back()">⬅ Voltar</button>
+<h2>🦖 GRANDES FAMÍLIAS E CLADOS DE DINOSAURIA</h2>
+<p>Divisão científica baseada na morfologia esquelética e linhagens evolutivas dos dinossauros.</p>
+
+<div class="animal" style="border-left: 5px solid red;">
+<h3>Tyrannosauridae (Tiranossaurídeos)</h3>
+<span class="tag">Saurischia</span><span class="tag">Theropoda</span><span class="tag">Extintos</span>
+<p><b>Como identificar a Família:</b> Dinossauros carnívoros bípedes de grande porte, crânios maciços e pesados, dentes grossos e serrilhados projetados para esmagar ossos, e braços extremamente reduzidos com apenas dois dedos funcionais.</p>
+<p><b>Onde viviam:</b> América do Norte e Ásia durante o final do período Cretáceo.</p>
+<p><b>O que comiam:</b> Grandes dinossauros herbívoros (como ceratopsídeos e hadrossauros).</p>
+<p><b>Espécies Famosas:</b> <i>Tyrannosaurus rex</i>, <i>Albertosaurus</i>, <i>Tarbosaurus</i>.</p>
+</div>
+
+<div class="animal" style="border-left: 5px solid red;">
+<h3>Diplodocidae (Diplodocídeos)</h3>
+<span class="tag">Saurischia</span><span class="tag">Sauropodomorpha</span><span class="tag">Extintos</span>
+<p><b>Como identificar a Família:</b> Gigantes quadrúpedes herbívoros caracterizados por pescoços longos, mas caudas ainda mais longas e finas que funcionavam como chicotes. Suas pernas traseiras eram mais compridas que as dianteiras, deixando o corpo horizontal.</p>
+<p><b>Onde viviam:</b> América do Norte, Europa e África (principalmente no período Jurássico).</p>
+<p><b>O que comem:</b> Folhagens de copas de árvores altas e samambaias gigantes.</p>
+<p><b>Espécies Famosas:</b> <i>Diplodocus</i>, <i>Apatosaurus</i>, <i>Barosaurus</i>.</p>
+</div>
+
+<div class="animal" style="border-left: 5px solid green;">
+<h3>Ceratopsidae (Ceratopsídeos)</h3>
+<span class="tag">Ornithischia</span><span class="tag">Marginocephalia</span><span class="tag">Extintos</span>
+<p><b>Como identificar a Família:</b> Quadrúpedes herbívoros marcados por imensos chifres faciais (no focinho e acima dos olhos) e um grande escudo ou gola óssea (folho) projetado para trás a partir do crânio.</p>
+<p><b>Onde viviam:</b> Exclusivamente no Cretáceo Superior da América do Norte e Ásia.</p>
+<p><b>O que comem:</b> Plantas fibrosas e vegetação rasteira cortada por seus bicos em forma de papagaio.</p>
+<p><b>Espécies Famosas:</b> <i>Triceratops</i>, <i>Styracosaurus</i>, <i>Centrosaurus</i>.</p>
+</div>
+
+<div class="animal" style="border-left: 5px solid green;">
+<h3>Stegosauridae (Estegossaurídeos)</h3>
+<span class="tag">Ornithischia</span><span class="tag">Thyreophora</span><span class="tag">Extintos</span>
+<p><b>Como identificar a Família:</b> Dinossauros com armadura que ostentavam uma fileira dupla de placas ou espigões retos de ossos dérmicos dispostos verticalmente ao longo de todo o dorso, terminando em espinhos perigosos na cauda.</p>
+<p><b>Onde viviam:</b> Jurássico e Cretáceo Inferior na América do Norte, Europa, Ásia e África.</p>
+<p><b>O que comem:</b> Vegetação rasteira e arbustos baixos, devido à cabeça posicionada próxima ao chão.</p>
+<p><b>Espécies Famosas:</b> <i>Stegosaurus</i>, <i>Kentrosaurus</i>.</p>
+</div>
+
+<div class="animal" style="border-left: 5px solid green;">
+<h3>Hadrosauridae (Hadrossaurídeos / Bico-de-Pato)</h3>
+<span class="tag">Ornithischia</span><span class="tag">Ornithopoda</span><span class="tag">Extintos</span>
+<p><b>Como identificar a Família:</b> Conhecidos como os "dinossauros bico-de-pato" devido ao focinho achatado. Muitas espécies desenvolveram cristas ósseas ocas bizarras no topo da cabeça que serviam como caixas de ressonância para emitir sons.</p>
+<p><b>Onde viviam:</b> Extremamente abundantes no Cretáceo Superior da Ásia, Europa e América do Norte.</p>
+<p><b>O que comem:</b> Herbívoros eficientes com baterias de centenas de dentes trituradores para moer plantas duras.</p>
+<p><b>Espécies Famosas:</b> <i>Parasaurolophus</i>, <i>Edmontosaurus</i>, <i>Maiasaura</i>.</p>
+</div>
+</div>
+
+<!-- ANFÍBIOS -->
+<div id="anfibios" class="group">
+<button class="back" onclick="back()">⬅ Voltar</button>
+<h2>🐸 FAMÍLIAS DE ANFÍBIOS (SAPOS E RÃS)</h2>
+<p>Principais famílias de anuros (sapos, rãs e pererecas) da ordem Anura.</p>
+
+<div class="animal">
+<h3>Bufonidae (Sapos Verdadeiros)</h3>
+<span class="tag">Anura</span><span class="tag">Atuais</span>
+<p><b>Como identificar a Família:</b> Corpo robusto e atarracado, pele geralmente seca e verrugosa com glândulas parotoides que produzem toxinas. Muitos possuem coloração críptica marrom ou cinza.</p>
+<p><b>Onde vivem:</b> Praticamente todos os continentes (exceto Antártida e algumas ilhas oceânicas), em habitats variados desde florestas até áreas urbanas.</p>
+<p><b>O que comem:</b> Insetos, aranhas, minhocas e pequenos invertebrados (capturados com a língua projétil).</p>
+<p><b>Estilo de Vida:</b> Principalmente terrestres e noturnos. Muitos são conhecidos por seu "canto" rouco durante a reprodução em águas temporárias.</p>
+<p><b>Espécies Famosas:</b> Sapo-Comum (<i>Bufo bufo</i>), Sapo-Cururu (<i>Rhinella marina</i>).</p>
+</div>
+
+<div class="animal">
+<h3>Ranidae (Rãs Verdadeiras)</h3>
+<span class="tag">Anura</span><span class="tag">Atuais</span>
+<p><b>Como identificar a Família:</b> Corpo mais esguio que os sapos, patas traseiras longas e poderosas adaptadas para saltos longos, pele lisa e úmida. Geralmente associadas a ambientes aquáticos.</p>
+<p><b>Onde vivem:</b> Distribuição cosmopolita, especialmente em regiões temperadas e tropicais próximas a corpos d'água.</p>
+<p><b>O que comem:</b> Insetos, pequenos vertebrados e crustáceos aquáticos.</p>
+<p><b>Estilo de Vida:</b> Excelentes saltadoras e nadadoras. Muitas espécies têm canto melodioso e são ativas tanto diurna quanto noturna.</p>
+<p><b>Espécies Famosas:</b> Rã-Touro (<i>Lithobates catesbeianus</i>), Rã-Comum-Europeia (<i>Rana temporaria</i>).</p>
+</div>
+
+<div class="animal">
+<h3>Hylidae (Pererecas / Sapos Arborícolas)</h3>
+<span class="tag">Anura</span><span class="tag">Atuais</span>
+<p><b>Como identificar a Família:</b> Dedos com discos adesivos (almofadas) que permitem escalar superfícies verticais. Corpo geralmente esguio e coloração verde brilhante para camuflagem em folhagens.</p>
+<p><b>Onde vivem:</b> Principalmente Américas (do Canadá ao sul da Argentina) e algumas regiões da Europa, Ásia e Austrália, em árvores e vegetação.</p>
+<p><b>O que comem:</b> Insetos voadores e pequenos artrópodes.</p>
+<p><b>Estilo de Vida:</b> Arborícolas, com grande capacidade de adesão. Muitas espécies são extremamente coloridas e vocalizam alto durante a noite.</p>
+<p><b>Espécies Famosas:</b> Perereca-Verde (<i>Boana faber</i> / <i>Hyla</i> spp.), Perereca-de-Unha.</p>
+</div>
+</div>
+
+<script>
+function openGroup(id){
+document.getElementById("menu").style.display="none";
+document.querySelectorAll(".group").forEach(g=>g.style.display="none");
+document.getElementById(id).style.display="block";
+}
+
+function back(){
+document.getElementById("menu").style.display="grid";
+document.querySelectorAll(".group").forEach(g=>g.style.display="none");
+}
+</script>
+
+</body>
+</html>
